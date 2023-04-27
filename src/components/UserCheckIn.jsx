@@ -12,7 +12,7 @@ export default function UserCheckIn() {
     return (
         <React.Fragment>
             <Title>Hoy</Title>
-            <Box sx={{ display: "flex", height: "100%", flexDirection: "column", alignItems: "center", p: 1, border: 1 }}>
+            <Box sx={{ display: "flex", height: "100%", flexDirection: "column", alignItems: "center", p: 1 }}>
                 <Avatar
                     alt="Remy Sharp"
                     src="/static/images/avatar/1.jpg"

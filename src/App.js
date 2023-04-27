@@ -1,5 +1,12 @@
 import React from "react";
-import Dashboard from "./components/Dashboard";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import Dashboard from "./pages/Dashboard";
+import Customers from "./pages/Customers";
+import { Route, Routes } from "react-router-dom";
+import Navbars from "./components/Navbars";
+import { Box } from "@mui/material";
+import Reports from "./pages/Reports";
+import Barcodes from "./pages/Barcodes";
 
 const clients = [
   {
@@ -20,10 +27,25 @@ const clients = [
   },
 ];
 
+const mdTheme = createTheme();
+
 function App() {
   return (
     <>
-      <Dashboard clients={clients} />
+      <ThemeProvider theme={mdTheme}>
+        <Box sx={{ display: "flex" }}>
+          <Navbars />
+          <Routes>
+            <Route path="/" element={<Dashboard clients={clients} />} />
+            <Route
+              path="/Customers"
+              element={<Customers clients={clients} />}
+            />
+            <Route path="/Reports" element={<Reports clients={clients} />} />
+            <Route path="/Barcodes" element={<Barcodes clients={clients} />} />
+          </Routes>
+        </Box>
+      </ThemeProvider>
     </>
   );
 }
