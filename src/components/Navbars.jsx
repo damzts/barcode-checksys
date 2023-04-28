@@ -63,7 +63,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
     }),
 );
 
-const Navbars = () => {
+const Navbars = ({ nametitle }) => {
     const [open, setOpen] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
@@ -96,7 +96,7 @@ const Navbars = () => {
                         noWrap
                         sx={{ flexGrow: 1 }}
                     >
-                        Dashboard
+                        {nametitle}
                     </Typography>
                     <IconButton color="inherit">
                         <Badge badgeContent={1} color="secondary">
