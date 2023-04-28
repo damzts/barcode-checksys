@@ -1,4 +1,7 @@
 import * as React from 'react';
+import { IconButton } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -8,10 +11,10 @@ import Title from './Title';
 
 
 
-export default function Entries({ rows }) {
+export default function UserTable({ rows }) {
     return (
         <React.Fragment>
-            <Title>Entradas</Title>
+            <Title>Users</Title>
             <Table size="small">
                 <TableHead>
                     <TableRow>
@@ -19,8 +22,10 @@ export default function Entries({ rows }) {
                         <TableCell>Nombre</TableCell>
                         <TableCell>Tipo_Nomina</TableCell>
                         <TableCell>Empresa</TableCell>
-                        <TableCell>Fecha</TableCell>
-                        <TableCell>Hora</TableCell>
+                        <TableCell>Fecha_Creacion</TableCell>
+                        <TableCell>Hora_Creacion</TableCell>
+                        <TableCell>Eliminar</TableCell>
+                        <TableCell>Editar</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -32,6 +37,16 @@ export default function Entries({ rows }) {
                             <TableCell>{row.empresa}</TableCell>
                             <TableCell>{row.date}</TableCell>
                             <TableCell>{row.time}</TableCell>
+                            <TableCell>
+                                <IconButton aria-label="delete" color='error'>
+                                    <DeleteIcon />
+                                </IconButton>
+                            </TableCell>
+                            <TableCell>
+                                <IconButton aria-label="delete" color='secondary'>
+                                    <EditIcon />
+                                </IconButton>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

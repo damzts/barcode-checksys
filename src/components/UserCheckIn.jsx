@@ -25,7 +25,6 @@ export default function UserCheckIn() {
                         <SendIcon />
                     </IconButton>
                 </Box>
-
             </Box>
         </React.Fragment>
     );

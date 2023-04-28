@@ -4,7 +4,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Entries from '../components/Entries';
+//icons
+import { Autocomplete, Button, IconButton, TextField } from '@mui/material';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import UserTable from '../components/UserTable';
+
 
 const Customers = ({ clients }) => {
     return (
@@ -28,19 +33,43 @@ const Customers = ({ clients }) => {
                     <Grid item xs={12} >
                         <Paper
                             sx={{
-                                p: 2,
+                                p: 1,
                                 display: 'flex',
                                 flexDirection: 'column',
-                                height: 100,
+                                justifyContent: "center",
+                                height: 60,
                             }}
                         >
-                            {/* <UserCheckIn /> */}
+                            <Box sx={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <Box sx={{ width: "80%" }}>
+                                    <Autocomplete
+                                        freeSolo
+                                        id="free-solo-2-demo"
+                                        size="small"
+                                        disableClearable
+                                        options={clients.map((client) => client.name)}
+                                        renderInput={(params) => (
+                                            <TextField
+                                                {...params}
+                                                label="Search input"
+                                                InputProps={{
+                                                    ...params.InputProps,
+                                                    type: 'search',
+                                                }}
+                                            />
+                                        )}
+                                    />
+                                </Box>
+                                <Button variant="contained" color="success">
+                                    New User
+                                </Button>
+                            </Box>
                         </Paper>
                     </Grid>
                     {/* Entries */}
                     <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                            <Entries rows={clients} />
+                            <UserTable rows={clients} />
                         </Paper>
                     </Grid>
                 </Grid>

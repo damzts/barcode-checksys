@@ -4,7 +4,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import Entries from '../components/Entries';
+//icons
+import QrCode2Icon from '@mui/icons-material/QrCode2';
+import { Avatar } from '@mui/material';
+
 
 const Barcodes = ({ clients }) => {
     return (
@@ -31,10 +34,11 @@ const Barcodes = ({ clients }) => {
                                 p: 2,
                                 display: 'flex',
                                 flexDirection: 'column',
+                                alignItems: 'center',
                                 height: 400,
                             }}
                         >
-                            {/* <UserCheckIn /> */}
+                            <QrCode2Icon sx={{ width: 300, height: 300 }} />
                         </Paper>
                     </Grid>
                 </Grid>

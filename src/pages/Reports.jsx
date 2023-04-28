@@ -24,6 +24,20 @@ const Reports = ({ clients }) => {
             <Toolbar />
             <Container maxWidth="xl" sx={{ mt: 2, mb: 4 }}>
                 <Grid container spacing={3}>
+                    {/* User Add */}
+                    <Grid item xs={12} >
+                        <Paper
+                            sx={{
+                                p: 1,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: "center",
+                                height: 60,
+                            }}
+                        >
+                            From A to B
+                        </Paper>
+                    </Grid>
                     {/* Entries */}
                     <Grid item xs={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
